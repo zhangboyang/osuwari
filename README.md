@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The F-word is too rude. Let's use something [cute](https://ja.wikipedia.org/wiki/%E7%8A%AC%E5%A4%9C%E5%8F%89_%28%E6%9E%B6%E7%A9%BA%E3%81%AE%E4%BA%BA%E7%89%A9%29).
+![osuwari](osuwari.jpg)
 
 ## Installation
 
@@ -13,7 +13,10 @@ pip3 install thefuck
 
 Place the following command in `.bash_profile`, `.bashrc`, `.zshrc` or other startup script:
 ```bash
-eval $(thefuck --alias osuwari)
+function pre_osuwari () {
+	printf '\033[0;32mかごめ：\033[0;31mおすわり！\033[0m\n'
+}
+eval $( (echo; thefuck --alias osuwari) | sed '1,/{/s/{/{ pre_osuwari;/')
 ```
 
 Finish!
