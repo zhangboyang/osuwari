@@ -1,4 +1,4 @@
-# お座り
+# おすわり
 
 ## Introduction
 
